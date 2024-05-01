@@ -1,5 +1,6 @@
-:root{
-    --clr: rgb(0, 30, 114);
+:root {
+    --blue: rgb(0, 30, 114);
+    --yellow: rgba(255, 217, 0, 0.86)
 }
 
 body {
@@ -9,25 +10,39 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: whitesmoke;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .main {
     padding: 10px;
 }
 
+.heading {
+    color: var(--blue);
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.heading>p {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: right;
+}
+
 .card {
     min-width: 400px;
     margin: 20px auto;
     padding: 0px 20px;
-    border: 3px solid var(--clr);
+    border: 3px solid var(--blue);
     border-radius: 5px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-    background-color: rgba(255, 217, 0, 0.86);
+    background-color: var(--yellow);
     display: flex;
     justify-content: space-between;
     cursor: pointer;
@@ -62,5 +77,38 @@ code {
     height: 150px;
     border-radius: 50%;
     margin: 10px 0;
-    border: 5px solid var(--clr);
+    border: 5px solid var(--blue);
+}
+
+.custom-footer {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background-color: gainsboro;
+    border-top: 4px solid var(--blue);
+}
+
+.addn-info {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.addn-info>* {
+    margin: 0px;
+}
+
+@media (max-width: 1250px) {
+    .heading>img.avatar-pic {
+        display: none;
+    }
+
+    .heading>p {
+        font-size: 40px !important;
+        text-align: center !important;
+        margin: 0 0 10px 0;
+    }
+
+    .heading {
+        margin: 0;
+    }
 }
